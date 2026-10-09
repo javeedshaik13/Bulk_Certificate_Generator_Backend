@@ -7,6 +7,7 @@
 [![ReportLab](https://img.shields.io/badge/PDF_Engine-ReportLab-orange.svg)](https://www.reportlab.com/)
 [![Tests](https://img.shields.io/badge/Tests-25%20Passing%20(100%25)-brightgreen.svg)]()
 [![Architecture](https://img.shields.io/badge/Architecture-Clean%20%2F%20Layered-indigo.svg)]()
+[![Miro Workflow](https://img.shields.io/badge/Miro-Interactive%20Workflow%20Board-050038.svg?logo=miro&logoColor=white)](https://miro.com/app/board/uXjVEcUMw4w=/?share_link_id=299247660343)
 
 > A production-grade, asynchronous REST API designed for high-throughput bulk certificate generation. The engine validates batch recipient payloads, generates personalized, vector-grade PDF certificates from an official predefined template, tracks progress in real-time with resilient failure isolation, and serves single-file or compressed bulk ZIP downloads.
 
@@ -275,6 +276,9 @@ The system fulfills the complete certificate generation and retrieval cycle thro
 <p align="center">
   <img src="docs/images/workflow_diagram.jpg" alt="Bulk Certificate Generation End-to-End Workflow Diagram" width="100%" />
 </p>
+
+> 🔗 **Interactive Workflow Canvas (Miro Board)**:  
+> For more workflow details, interactive canvas exploration, and zoomable step-by-step breakdowns, [**click here to view the official Miro Workflow Diagram**](https://miro.com/app/board/uXjVEcUMw4w=/?share_link_id=299247660343).
 
 The visual workflow diagram above and the flowchart below illustrate the ten operational stages, explicit decision diamonds, failure branching, and the three terminal job states.
 
