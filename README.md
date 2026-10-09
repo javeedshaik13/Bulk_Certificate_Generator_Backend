@@ -48,7 +48,11 @@ The **Bulk Certificate Generator Backend API** is engineered around principles o
 
 ## 2. System Architecture Diagram
 
-The diagram below maps all six architectural layers, the primary numbered execution path (1 through 12), and explicit failure branches.
+<p align="center">
+  <img src="docs/images/architecture_diagram.jpg" alt="Bulk Certificate Generator Backend Architecture Diagram" width="100%" />
+</p>
+
+The visual diagram above and the interactive specification below map all architectural layers, the primary numbered execution path (1 through 12), and explicit failure branches.
 
 ```mermaid
 flowchart TB
@@ -268,7 +272,11 @@ The system fulfills the complete certificate generation and retrieval cycle thro
 
 ## 6. End-to-End Workflow Diagram
 
-The workflow diagram below illustrates the ten operational stages, explicit decision diamonds, failure branching, and the three terminal job states.
+<p align="center">
+  <img src="docs/images/workflow_diagram.jpg" alt="Bulk Certificate Generation End-to-End Workflow Diagram" width="100%" />
+</p>
+
+The visual workflow diagram above and the flowchart below illustrate the ten operational stages, explicit decision diamonds, failure branching, and the three terminal job states.
 
 ```mermaid
 flowchart TD
