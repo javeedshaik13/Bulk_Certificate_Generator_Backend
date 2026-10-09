@@ -588,10 +588,22 @@ MAX_CONCURRENT_WORKERS=4
 MAX_RECIPIENTS_PER_JOB=1000
 ```
 
-### Running the API Server
+### Running the API Server Locally
 ```bash
 uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
+
+### Running with Docker & Docker Compose (Production Setup)
+To launch the API alongside a dedicated PostgreSQL database container with volume persistence and healthchecks:
+```bash
+docker compose up --build -d
+```
+Check container logs and health:
+```bash
+docker compose ps
+docker compose logs -f api
+```
+
 Interactive API documentation will be available at:
 - **Swagger UI**: `http://localhost:8000/docs`
 - **ReDoc**: `http://localhost:8000/redoc`

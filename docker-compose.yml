@@ -1,0 +1,45 @@
+services:
+  api:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: certificate_generator_api
+    restart: unless-stopped
+    ports:
+      - "8000:8000"
+    environment:
+      - APP_NAME=Bulk Certificate Generator API
+      - ENVIRONMENT=production
+      - DEBUG=false
+      - DATABASE_URL=postgresql+psycopg2://cert_user:cert_password@postgres_db:5432/certificate_db
+      - STORAGE_BACKEND=local
+      - STORAGE_BASE_DIR=/app/storage/certificates
+      - MAX_CONCURRENT_WORKERS=4
+      - MAX_RECIPIENTS_PER_JOB=1000
+    volumes:
+      - certificate_storage:/app/storage/certificates
+    depends_on:
+      postgres_db:
+        condition: service_healthy
+
+  postgres_db:
+    image: postgres:15-alpine
+    container_name: certificate_generator_db
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=cert_user
+      - POSTGRES_PASSWORD=cert_password
+      - POSTGRES_DB=certificate_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U cert_user -d certificate_db"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  certificate_storage:
+  postgres_data:
